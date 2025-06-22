@@ -267,11 +267,11 @@ const _$DnsModeEnumMap = {
 _$GeoXUrlImpl _$$GeoXUrlImplFromJson(Map<String, dynamic> json) =>
     _$GeoXUrlImpl(
       mmdb: json['mmdb'] as String? ??
-          "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb",
+          "https://testingcf.jsdelivr.net/gh/avkiller/geoip@release/Country.mmdb",
       asn: json['asn'] as String? ??
-          "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb",
+          "https://testingcf.jsdelivr.net/gh/avkiller/geoip@release/GeoLite2-Country.mmdb",
       geoip: json['geoip'] as String? ??
-          "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat",
+          "https://testingcf.jsdelivr.net/gh/avkiller/geoip@release/geoip.dat",
       geosite: json['geosite'] as String? ??
           "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
     );
