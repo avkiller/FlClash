@@ -1,7 +1,5 @@
 // ignore_for_file: constant_identifier_names
 
-// ignore_for_file: constant_identifier_names
-
 import 'dart:math';
 import 'dart:ui';
 
@@ -11,9 +9,6 @@ import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:flutter/material.dart';
 
-const appName = 'FlClash';
-const appHelperService = 'FlClashHelperService';
-const coreName = 'clash.meta';
 const appName = 'FlClash';
 const appHelperService = 'FlClashHelperService';
 const coreName = 'clash.meta';
@@ -41,22 +36,11 @@ const MMDB = 'GEOIP.metadb';
 const ASN = 'ASN.mmdb';
 const GEOIP = 'GEOIP.dat';
 const GEOSITE = 'GEOSITE.dat';
-const MMDB = 'GEOIP.metadb';
-const ASN = 'ASN.mmdb';
-const GEOIP = 'GEOIP.dat';
-const GEOSITE = 'GEOSITE.dat';
 final double kHeaderHeight = system.isDesktop
     ? !system.isMacOS
           ? 40
           : 28
-    ? !system.isMacOS
-          ? 40
-          : 28
     : 0;
-const profilesDirectoryName = 'profiles';
-const localhost = '127.0.0.1';
-const clashConfigKey = 'clash_config';
-const configKey = 'config';
 const profilesDirectoryName = 'profiles';
 const localhost = '127.0.0.1';
 const clashConfigKey = 'clash_config';
@@ -67,7 +51,6 @@ const defaultExternalController = '127.0.0.1:9527';
 const maxMobileWidth = 600;
 const maxLaptopWidth = 840;
 const defaultTestUrl = 'https://www.gstatic.com/generate_204';
-const defaultTestUrl = 'https://www.gstatic.com/generate_204';
 final commonFilter = ImageFilter.blur(
   sigmaX: 5,
   sigmaY: 5,
@@ -75,7 +58,6 @@ final commonFilter = ImageFilter.blur(
 );
 
 const navigationItemListEquality = ListEquality<NavigationItem>();
-const trackerInfoListEquality = ListEquality<TrackerInfo>();
 const trackerInfoListEquality = ListEquality<TrackerInfo>();
 const stringListEquality = ListEquality<String>();
 const intListEquality = ListEquality<int>();
@@ -100,24 +82,17 @@ const viewModeColumnsMap = {
 const proxiesListStoreKey = PageStorageKey<String>('proxies_list');
 const toolsStoreKey = PageStorageKey<String>('tools');
 const profilesStoreKey = PageStorageKey<String>('profiles');
-const proxiesListStoreKey = PageStorageKey<String>('proxies_list');
-const toolsStoreKey = PageStorageKey<String>('tools');
-const profilesStoreKey = PageStorageKey<String>('profiles');
 
 const defaultPrimaryColor = 0XFFD8C0C3;
 
 double getWidgetHeight(num lines) {
   return max(lines * 80 + (lines - 1) * 16, 0).ap;
-  return max(lines * 80 + (lines - 1) * 16, 0).ap;
 }
 
 const maxLength = 1000;
-const maxLength = 1000;
 
 final mainIsolate = 'FlClashMainIsolate';
-final mainIsolate = 'FlClashMainIsolate';
 
-final serviceIsolate = 'FlClashServiceIsolate';
 final serviceIsolate = 'FlClashServiceIsolate';
 
 const defaultPrimaryColors = [
@@ -131,8 +106,6 @@ const defaultPrimaryColors = [
 ];
 
 const scriptTemplate = '''
-const scriptTemplate = '''
 const main = (config) => {
   return config;
-}''';
 }''';

@@ -1,13 +1,10 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Properties
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("dev.flutter.flutter-gradle-plugin")
-    id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
 }
@@ -26,16 +23,9 @@ val mKeyPassword: String? = localProperties.getProperty("keyPassword")
 val isRelease =
     mStoreFile.exists() && mStorePassword != null && mKeyAlias != null && mKeyPassword != null
 
-val isRelease =
-    mStoreFile.exists() && mStorePassword != null && mKeyAlias != null && mKeyPassword != null
-
 
 android {
     namespace = "com.follow.clash"
-    compileSdk = libs.versions.compileSdk.get().toInt()
-    ndkVersion = libs.versions.ndkVersion.get()
-
-
     compileSdk = libs.versions.compileSdk.get().toInt()
     ndkVersion = libs.versions.ndkVersion.get()
 
@@ -49,7 +39,6 @@ android {
     defaultConfig {
         applicationId = "com.fireworld.clash"
         minSdk = flutter.minSdkVersion
-        targetSdk = libs.versions.targetSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -72,12 +61,6 @@ android {
         }
     }
 
-    packaging {
-        jniLibs {
-            useLegacyPackaging = true
-        }
-    }
-
     buildTypes {
         debug {
             isMinifyEnabled = false
@@ -87,7 +70,6 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            isShrinkResources = true
             signingConfig = if (isRelease) {
                 signingConfigs.getByName("release")
             } else {
@@ -96,15 +78,8 @@ android {
 
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
-    }
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_17)
     }
 }
 
@@ -119,13 +94,7 @@ flutter {
 }
 
 
-
 dependencies {
-    implementation(project(":service"))
-    implementation(project(":common"))
-    implementation(libs.core.splashscreen)
-    implementation(libs.gson)
-    implementation(libs.smali.dexlib2) {
     implementation(project(":service"))
     implementation(project(":common"))
     implementation(libs.core.splashscreen)
@@ -133,9 +102,6 @@ dependencies {
     implementation(libs.smali.dexlib2) {
         exclude(group = "com.google.guava", module = "guava")
     }
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics.ndk)
-    implementation(libs.firebase.analytics)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics.ndk)
     implementation(libs.firebase.analytics)
